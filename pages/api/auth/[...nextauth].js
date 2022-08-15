@@ -25,9 +25,7 @@ export default NextAuth({
   callbacks: {
     session: async ({ session, user }) => {
       session.user.id = user.id;
-      session.user.image = user.image;
-      session.user.username = user.username;
-      session.user.name = user.name;
+      session.user.isAdmin = user.isAdmin;
       return Promise.resolve(session);
     },
   },
